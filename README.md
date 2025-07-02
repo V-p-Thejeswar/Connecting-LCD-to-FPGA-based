@@ -13,10 +13,9 @@ lcd_fpga_interface/
 
 
 
-module top_lcd_hello(
+**module top_lcd_hello(
     input  wire clk100,
     input  wire cpu_resetn,          // BTN-reset on board (active-low)
-
     inout  wire [7:0] lcd_d,         // JA[1-4,7-10]
     output wire       lcd_rs,        // JB1
     output wire       lcd_rw,        // JB2 (tie low)
@@ -83,12 +82,12 @@ module top_lcd_hello(
             wr_en <= 0;           // drop strobe after one clock
         end
     end
-endmodule
+endmodule**
 
 
 # lcd_driver.v            # HD44780-compatible LCD driver
 
-
+**
 // PmodCLP/HD44780 8-bit driver, blocking-write only (RW tied low)
 module lcd_driver #(
     parameter CLK_HZ = 100_000_000
@@ -154,7 +153,7 @@ module lcd_driver #(
         end
     end
 endmodule
-
+**
 
 
 # hardware connections are 
